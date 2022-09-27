@@ -2,6 +2,8 @@
 
 ### Redux + Redux toolkit
 
+> Next js + Redux + Redux toolkit + typescript로 서버사이드 비동기 서버사이드 리덕스 사용
+
 ### 패키지 설치
 
 ```bash
