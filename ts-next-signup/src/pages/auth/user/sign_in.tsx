@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { TextField, Button } from '@/components/atoms';
+import { Textfield, Button } from '@/components/atoms';
 import { FormWrapper } from '@/components/molecules';
 import { PageLayoutProps } from '@/types';
 
@@ -20,14 +20,14 @@ const SignInPage: PageLayoutProps = () => {
     <SContainer>
       <SWrapper>
         <FormWrapper legend="로그인 폼">
-          <TextField
+          <Textfield
             label={'이메일'}
             type={'email'}
             placeholder="이메일을 입력해주세요"
             helperText=""
             fullWidth
           />
-          <TextField
+          <Textfield
             label={'비밀번호'}
             type={'password'}
             placeholder="비밀번호를 입력해주세요"

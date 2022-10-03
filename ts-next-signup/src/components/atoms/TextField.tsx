@@ -12,13 +12,13 @@ interface InputBaseProps {
   as?: 'input' | 'textarea';
 }
 
-interface TextFieldProps extends InputBaseProps, ErrorOccur {
+interface TextfieldProps extends InputBaseProps, ErrorOccur {
   label?: string;
   helperText?: string;
 }
 
-const TextField = memo(
-  forwardRef<HTMLDivElement, TextFieldProps>(
+const Textfield = memo(
+  forwardRef<HTMLDivElement, TextfieldProps>(
     (
       { label, type, placeholder, as, fullWidth, helperText, error, inputRef },
       rootRef,
@@ -50,7 +50,7 @@ const TextField = memo(
   ),
 );
 
-export default TextField;
+export default Textfield;
 
 const SContainer = styled.div<ErrorOccur>(({ error }) => {
   const errorColor = '#ff0e36';
