@@ -20,7 +20,17 @@ interface TextfieldProps extends InputBaseProps, ErrorOccur {
 const Textfield = memo(
   forwardRef<HTMLDivElement, TextfieldProps>(
     (
-      { label, type, placeholder, as, fullWidth, helperText, error, inputRef },
+      {
+        label,
+        type,
+        placeholder,
+        as,
+        fullWidth,
+        helperText,
+        error,
+        inputRef,
+        ...inputProps
+      },
       rootRef,
     ) => {
       return (
@@ -38,6 +48,7 @@ const Textfield = memo(
             as={as}
             fullWidth={fullWidth}
             ref={inputRef}
+            {...inputProps}
           />
           {helperText && (
             <SHelperText className="textfield-helper-text">

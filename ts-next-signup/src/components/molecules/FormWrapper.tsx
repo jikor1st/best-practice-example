@@ -1,9 +1,10 @@
-import { ReactNode, ComponentProps } from 'react';
+import { ReactNode, ComponentProps, FormHTMLAttributes } from 'react';
 import styled from '@emotion/styled';
 import { FormFieldset, FormLegend } from '@/components/atoms';
 
 interface FormWrapperProps
-  extends ComponentProps<typeof FormFieldset>,
+  extends FormHTMLAttributes<HTMLFormElement>,
+    ComponentProps<typeof FormFieldset>,
     ComponentProps<typeof FormLegend> {
   children: ReactNode;
 }
@@ -11,20 +12,22 @@ interface FormWrapperProps
 const FormWrapper = ({
   children,
   legend,
+  noValidate = true,
+  onSubmit,
   ...fieldsetProps
 }: FormWrapperProps) => {
   return (
-    <SFormWrapper>
+    <SForm noValidate={noValidate} onSubmit={onSubmit}>
       <FormFieldset {...fieldsetProps}>
         {legend && <FormLegend legend={legend} />}
         {children}
       </FormFieldset>
-    </SFormWrapper>
+    </SForm>
   );
 };
 
 export default FormWrapper;
 
-const SFormWrapper = styled.form(() => {
+const SForm = styled.form(() => {
   return {};
 });

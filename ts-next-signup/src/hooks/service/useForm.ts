@@ -81,7 +81,7 @@ const createInitialFormState = <FV>(initialValue: InitialValueProps<FV>) => {
 // **useForm hook
 export const useForm = <FV>(
   initialValue: InitialValueProps<FV>,
-  initialOptions: InitialOptionsProps<FV>,
+  initialOptions?: InitialOptionsProps<FV>,
 ) => {
   const { validation } = initialOptions ?? {};
   // **form 상태
@@ -110,6 +110,12 @@ export const useForm = <FV>(
       [name]: value,
     }));
   };
+  const resetFormValue = (name: keyof FV) => {
+    setFormValue(prev => ({
+      ...prev,
+      [name]: initialValue[name],
+    }));
+  };
   const changeFormState = (
     name: keyof FV,
     {
@@ -124,6 +130,16 @@ export const useForm = <FV>(
         type: type,
         error: error,
         helperText: helperText,
+      },
+    }));
+  };
+  const resetFormState = (name: keyof FV) => {
+    setFormState(prev => ({
+      ...prev,
+      [name]: {
+        type: null,
+        error: false,
+        helperText: '',
       },
     }));
   };
@@ -265,9 +281,11 @@ export const useForm = <FV>(
     formSubmitting,
     formHasError,
     firstChangeValue,
+    formRegister,
     changeFormValue,
     changeFormState,
-    formRegister,
+    resetFormValue,
+    resetFormState,
     handleSubmit,
     checkValidation,
   };

@@ -1,3 +1,4 @@
+import { NextPageContext } from 'next';
 import { useState } from 'react';
 import Head from 'next/head';
 import type { AppProps } from 'next/app';
@@ -22,6 +23,8 @@ import { ReactQueryDevtools } from 'react-query/devtools';
 // **Redux
 import { Provider } from 'react-redux';
 import store from '@/store';
+
+import { InitialApp } from '@/extendsComponents';
 
 interface PageProps {
   dehydratedState: DehydratedState;
@@ -51,6 +54,7 @@ function AppPage({ Component, pageProps }: AppPropsWithLayoutProps<PageProps>) {
           <Hydrate state={pageProps.dehydratedState}>
             <ThemeProvider theme={{}}>
               <Global styles={[resetStyles, globalStyles]} />
+              <InitialApp />
               {getLayout(<Component {...pageProps} />)}
             </ThemeProvider>
           </Hydrate>
