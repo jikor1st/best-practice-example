@@ -8,8 +8,16 @@ const FormLegend = ({ legend }: FormLegendProps) => {
   return <SFormLegend>{legend}</SFormLegend>;
 };
 
-const SFormLegend = styled.legend(() => {
-  return {};
-});
-
 export default FormLegend;
+
+const SFormLegend = styled.legend(() => {
+  return {
+    overflow: 'hidden',
+    position: 'absolute',
+    width: 0,
+    height: 0,
+    lineHeight: 0,
+    fontSize: 0,
+    textIndex: -9999,
+  };
+});

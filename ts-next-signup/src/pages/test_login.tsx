@@ -9,7 +9,7 @@ interface IniialValuesType {
   passwordCheck: string;
 }
 
-const Login = () => {
+const TestLoginPage = () => {
   const [isLoadingDuplicateCheckEmail, setIsLoadingDuplicateCheckEmail] =
     useState(false);
   const [duplicateCheckEmail, setDuplicateCheckEmail] = useState(false);
@@ -212,4 +212,4 @@ const SubmitButton = styled.button(() => {
   };
 });
 
-export default Login;
+export default TestLoginPage;

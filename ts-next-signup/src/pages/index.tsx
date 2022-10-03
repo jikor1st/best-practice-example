@@ -14,7 +14,7 @@ import { RootState } from '@/store';
 import { plusCounter } from '@/store/slices';
 
 // example page
-const Home: PageLayoutProps = () => {
+const MainPage: PageLayoutProps = () => {
   // example simple react redux
   const exampleValue = useSelector((state: RootState) => state.example.value);
   const dispatch = useDispatch();
@@ -67,8 +67,8 @@ export async function getStaticProps() {
 }
 
 // example for pageLayout change per page
-Home.getLayout = function getLayout(page: ReactElement) {
+MainPage.getLayout = function getLayout(page: ReactElement) {
   return <PageLayout>{page}</PageLayout>;
 };
 
-export default Home;
+export default MainPage;

@@ -18,6 +18,19 @@ const globalStyles = css`
     box-sizing: border-box;
   }
 
+  /** input number 화살표 제거 */
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+
   @media (prefers-color-scheme: dark) {
     html {
       color-scheme: dark;

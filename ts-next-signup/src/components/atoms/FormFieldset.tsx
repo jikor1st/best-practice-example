@@ -12,8 +12,8 @@ const FormFieldset = ({ children, ...rest }: FormFieldsetProps) => {
   return <SFormFieldset {...rest}>{children}</SFormFieldset>;
 };
 
+export default FormFieldset;
+
 const SFormFieldset = styled.fieldset(() => {
   return {};
 });
-
-export default FormFieldset;

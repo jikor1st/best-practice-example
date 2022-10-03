@@ -30,7 +30,7 @@ interface AppPropsWithLayoutProps<P> extends AppProps<P> {
   Component: PageLayoutProps<P>;
 }
 
-function MyApp({ Component, pageProps }: AppPropsWithLayoutProps<PageProps>) {
+function AppPage({ Component, pageProps }: AppPropsWithLayoutProps<PageProps>) {
   // **react queryClient
   const [queryClient] = useState(() => new QueryClient());
 
@@ -61,4 +61,4 @@ function MyApp({ Component, pageProps }: AppPropsWithLayoutProps<PageProps>) {
   );
 }
 
-export default MyApp;
+export default AppPage;
